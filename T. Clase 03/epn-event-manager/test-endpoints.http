@@ -1,0 +1,94 @@
+### 1. Health check
+GET http://localhost:3000/health
+
+###
+
+### 2. Registrar evento CREATE
+POST http://localhost:3000/events
+Content-Type: application/json
+
+{
+  "source": "crud-esports",
+  "entity": "tournament",
+  "action": "CREATE",
+  "title": "Torneo creado",
+  "description": "Se creó el torneo League of Legends 2026",
+  "payload": {
+    "id": 1,
+    "name": "League of Legends 2026"
+  }
+}
+
+###
+
+### 3. Registrar evento UPDATE
+POST http://localhost:3000/events
+Content-Type: application/json
+
+{
+  "source": "crud-esports",
+  "entity": "tournament",
+  "action": "UPDATE",
+  "title": "Torneo actualizado",
+  "description": "Se actualizó la fecha del torneo",
+  "payload": {
+    "id": 1,
+    "name": "League of Legends 2026",
+    "date": "2026-06-15"
+  }
+}
+
+###
+
+### 4. Registrar evento DELETE
+POST http://localhost:3000/events
+Content-Type: application/json
+
+{
+  "source": "crud-esports",
+  "entity": "tournament",
+  "action": "DELETE",
+  "title": "Torneo eliminado",
+  "description": "Se eliminó el torneo de prueba",
+  "payload": {
+    "id": 1,
+    "name": "League of Legends 2026"
+  }
+}
+
+###
+
+### 5. Registrar evento QUERY
+POST http://localhost:3000/events
+Content-Type: application/json
+
+{
+  "source": "crud-esports",
+  "entity": "tournament",
+  "action": "QUERY",
+  "title": "Consulta realizada",
+  "description": "Se consultó la lista de torneos",
+  "payload": {
+    "filters": "none"
+  }
+}
+
+###
+
+### 6. Obtener todos los eventos
+GET http://localhost:3000/events
+
+###
+
+### 7. Filtrar por source
+GET http://localhost:3000/events/source/crud-esports
+
+###
+
+### 8. Filtrar por entity
+GET http://localhost:3000/events/entity/tournament
+
+###
+
+### 9. Stats
+GET http://localhost:3000/stats
